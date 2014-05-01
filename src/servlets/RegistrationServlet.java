@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class RegistrationServlet extends HttpServlet {
     
-	private static final long serialVersionUID = 8462431885847832248L;	
+	private static final long serialVersionUID = 8462431885847832248L;	 
 	public static final String USERS_MAP_APP_ATTR_NAME = "usersMap";	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
