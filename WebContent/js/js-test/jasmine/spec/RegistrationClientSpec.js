@@ -11,8 +11,8 @@
 describe("RegistrationClientSpec", function() {
    var registrationClient;
    var registrationForm;
-   var userName;
-  
+   var userName; 
+     
    beforeEach(function() {	   
 	   	//jasmine.getFixtures().fixturesPath = '/test/spec/javascripts/fixtures/'; /* for the JSTD running ... */	    
 	    //loadFixtures("registrationFixture.html"); 
