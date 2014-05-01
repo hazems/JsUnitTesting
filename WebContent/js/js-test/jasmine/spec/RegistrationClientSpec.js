@@ -117,7 +117,7 @@ describe("RegistrationClientSpec", function() {
 			document.getElementById("username").value = userName;
 	 		document.getElementById("password1").value = "Admin@123";
 	 		document.getElementById("password2").value = "Admin@123";  	 		
-	 			 		
+	 		
 	 		var successCallBack = function() {
 	 			console.log("[Error] Registration duplicated succeeded!!!");
 	 		};
