@@ -16,7 +16,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'js-test/jasmine/lib/plugins/jasmine-jquery/jquery.js',
+      'js-test/jasmine/lib/plugins/jasmine-jquery/jquery-2.1.0.min.js',
       'js-test/jasmine/lib/plugins/jasmine-jquery/jasmine-jquery.js',      
       'js-src/*.js',      
       'js-test/jasmine/spec/*.js'
@@ -25,7 +25,6 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      
     ],
 
 

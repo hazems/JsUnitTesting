@@ -23,7 +23,7 @@ public class LogoutServlet extends HttpServlet {
 		response.setHeader("Pragma", "no-cache");
 	
 		request.getSession().invalidate();
-		response.sendRedirect(request.getContextPath() + "/login.jsp");
+		response.sendRedirect(request.getContextPath() + "/login.jsp"); 
 	}
 	
 }

@@ -93,7 +93,7 @@ describe("RegistrationClientSpec", function() {
 	 	});	   
 	}); 
 	
-	describe("when user registration is done", function() {
+	describe("when user registration is done", function(done) {
 		it("should be able to register valid user correctly", function() {
 			userName = "hazems" + new Date().getTime() + "@apache.org";
 	 		
@@ -101,40 +101,33 @@ describe("RegistrationClientSpec", function() {
 	 		document.getElementById("password1").value = "Admin@123";
 	 		document.getElementById("password2").value = "Admin@123";  	 		
 	 		
-	 		var successCallBack = jasmine.createSpy();
-	 		var failureCallBack = jasmine.createSpy();	 	
+	 		var successCallBack = function() {
+	 			console.log("Registration succeeded");
+	 			done();
+	 		}; 
+	 		
+	 		var failureCallBack = function() {
+	 			console.log("Registration failed");
+	 		}
 
 	 		registrationClient.registerUser(registrationForm, successCallBack, failureCallBack);	 		
-	 		
-	 		waitsFor(function() {
-	 	        return successCallBack.callCount > 0;
-	 	    }, "registration never completed", 10000);
-	 	    
-	 		runs(function() {
-	 	        expect(successCallBack).toHaveBeenCalled();
-	 	        expect(failureCallBack).not.toHaveBeenCalled();	 	        
-	 	    });
 		});
 		
-		it("should fail when a specific user id is already registered", function() {	 		
+		it("should fail when a specific user id is already registered", function(done) {	 		
 			document.getElementById("username").value = userName;
 	 		document.getElementById("password1").value = "Admin@123";
 	 		document.getElementById("password2").value = "Admin@123";  	 		
+	 			 		
+	 		var successCallBack = function() {
+	 			console.log("[Error] Registration duplicated succeeded!!!");
+	 		};
 	 		
-	 		var successCallBack = jasmine.createSpy();
-	 		var failureCallBack = jasmine.createSpy();	 	
+	 		var failureCallBack = function() {
+	 			console.log("[Success] Registration duplicated failed!!!");
+	 			done();
+	 		};		
 
-	 		registrationClient.registerUser(registrationForm, successCallBack, failureCallBack);	 		
-	 		
-	 		waitsFor(function() {
-	 	        return failureCallBack.callCount > 0;
-	 	    }, "registration never completed", 10000);
-	 	    
-	 		runs(function() {
-	 	        expect(failureCallBack).toHaveBeenCalled();
-	 			expect(failureCallBack.mostRecentCall.args[0].xmlhttp.responseText, "A user with the same username is already registered ...");	 	        
-	 	        expect(successCallBack).not.toHaveBeenCalled();	 	        
-	 	    });			
+	 		registrationClient.registerUser(registrationForm, successCallBack, failureCallBack);			
 		});	
 		
 	});	
