@@ -1,6 +1,5 @@
 JsUnitTesting
 =============
-
 A Java EE project which utilizes Jasmine as a JavaScript unit testing framework, and Karma JS as test runners. This project gives you an example of how to:
 > Use Jasmine 2.0 for developing synchronous JavaScript tests.
 > Use Jasmine 2.0 for developing asynchronous JavaScript tests. 
