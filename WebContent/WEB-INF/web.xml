@@ -44,7 +44,7 @@
     <servlet-name>RegistrationServlet</servlet-name>
     <url-pattern>/RegistrationServlet</url-pattern>
   </servlet-mapping>
-  <!--  
+  
   <filter>
     <display-name>SecurityFilter</display-name>
     <filter-name>SecurityFilter</filter-name>
@@ -53,5 +53,5 @@
   <filter-mapping>
     <filter-name>SecurityFilter</filter-name>
     <url-pattern>/protected/*</url-pattern>
-  </filter-mapping>-->
+  </filter-mapping>
 </web-app>

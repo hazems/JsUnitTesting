@@ -28,7 +28,8 @@ public class WeatherProxyServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
+		System.out.println("In WeatherProxyServlet ...");
+		
 		String WOEID = request.getParameter("w");
 		HttpURLConnection connection = null;
 		
