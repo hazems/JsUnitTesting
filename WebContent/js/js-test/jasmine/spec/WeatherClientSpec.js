@@ -38,7 +38,7 @@ describe("WeatherClientSpec", function() {
 	   
 	   it("should be able to get the weather of a valid location (Cairo)", function(done) {	 		
 	 		var successCallBack = function() {
-	 			console.log("succeeded");
+	 			console.log("Getting the weather of a valid location (Cairo) succeeded");
 	 			done();
 	 		};
 	 		

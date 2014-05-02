@@ -1,24 +1,32 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="Chrome 33.0.1750 (Mac OS X 10.9.2)" package="" timestamp="2014-03-23T02:45:43" id="0" hostname="IBMs-MacBook-Pro-2.local">
+  <testsuite name="Chrome 34.0.1847 (Mac OS X 10.9.2)" package="" timestamp="2014-05-02T03:03:11" id="0" hostname="IBMs-MacBook-Pro-2.local">
     <properties>
-      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36"/>
+      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36"/>
     </properties>
   </testsuite>
-  <testsuite name="Chrome 33.0.1750 (Mac OS X 10.9.2)" package="" timestamp="2014-03-23T02:45:44" id="0" hostname="IBMs-MacBook-Pro-2.local" tests="13" errors="1" failures="0" time="0.024">
+  <testsuite name="Chrome 34.0.1847 (Mac OS X 10.9.2)" package="" timestamp="2014-05-02T03:03:11" id="0" hostname="IBMs-MacBook-Pro-2.local" tests="13" errors="0" failures="0" time="1.443">
     <properties>
-      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36"/>
+      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36"/>
     </properties>
-    <testcase name="should be able to display an error message when username is not entered" time="0.019" classname="Chrome 33.0.1750 (Mac OS X 10.9.2).LoginClientSpec when validating empty username and password"/>
-    <testcase name="should be able to display an error message when password is not entered" time="0.001" classname="Chrome 33.0.1750 (Mac OS X 10.9.2).LoginClientSpec when validating empty username and password"/>
-    <testcase name="should be able to display an error message when username format is not correct" time="0" classname="Chrome 33.0.1750 (Mac OS X 10.9.2).LoginClientSpec when validating username format"/>
-    <testcase name="should be able to display an error message when password format is not correct" time="0.001" classname="Chrome 33.0.1750 (Mac OS X 10.9.2).LoginClientSpec when validating password format"/>
-    <testcase name="should be able to display an error message when username is not entered" time="0.001" classname="Chrome 33.0.1750 (Mac OS X 10.9.2).RegistrationClientSpec when validating empty username and password"/>
-    <testcase name="should be able to display an error message when password is not entered" time="0.001" classname="Chrome 33.0.1750 (Mac OS X 10.9.2).RegistrationClientSpec when validating empty username and password"/>
-    <testcase name="should be able to display an error message when passwords are not matched" time="0" classname="Chrome 33.0.1750 (Mac OS X 10.9.2).RegistrationClientSpec when validating matched passwords"/>
-    <testcase name="should be able to display an error message when username format is not correct" time="0.001" classname="Chrome 33.0.1750 (Mac OS X 10.9.2).RegistrationClientSpec when validating username format"/>
-    <testcase name="should be able to display an error message when password format is not correct" time="0" classname="Chrome 33.0.1750 (Mac OS X 10.9.2).RegistrationClientSpec when validating password format"/>
-    <system-out><![CDATA[
+    <testcase name="should be able to display an error message when username is not entered" time="0.007" classname="Chrome 34.0.1847 (Mac OS X 10.9.2).LoginClientSpec when validating empty username and password"/>
+    <testcase name="should be able to display an error message when password is not entered" time="0.001" classname="Chrome 34.0.1847 (Mac OS X 10.9.2).LoginClientSpec when validating empty username and password"/>
+    <testcase name="should be able to display an error message when username format is not correct" time="0" classname="Chrome 34.0.1847 (Mac OS X 10.9.2).LoginClientSpec when validating username format"/>
+    <testcase name="should be able to display an error message when password format is not correct" time="0.001" classname="Chrome 34.0.1847 (Mac OS X 10.9.2).LoginClientSpec when validating password format"/>
+    <testcase name="should be able to display an error message when username is not entered" time="0.001" classname="Chrome 34.0.1847 (Mac OS X 10.9.2).RegistrationClientSpec when validating empty username and password"/>
+    <testcase name="should be able to display an error message when password is not entered" time="0.001" classname="Chrome 34.0.1847 (Mac OS X 10.9.2).RegistrationClientSpec when validating empty username and password"/>
+    <testcase name="should be able to display an error message when passwords are not matched" time="0.001" classname="Chrome 34.0.1847 (Mac OS X 10.9.2).RegistrationClientSpec when validating matched passwords"/>
+    <testcase name="should be able to display an error message when username format is not correct" time="0" classname="Chrome 34.0.1847 (Mac OS X 10.9.2).RegistrationClientSpec when validating username format"/>
+    <testcase name="should be able to display an error message when password format is not correct" time="0.001" classname="Chrome 34.0.1847 (Mac OS X 10.9.2).RegistrationClientSpec when validating password format"/>
+    <testcase name="should be able to register valid user correctly" time="0.013" classname="Chrome 34.0.1847 (Mac OS X 10.9.2).RegistrationClientSpec when user registration is done"/>
+    <testcase name="should fail when a specific user id is already registered" time="0.007" classname="Chrome 34.0.1847 (Mac OS X 10.9.2).RegistrationClientSpec when user registration is done"/>
+    <testcase name="should be able to get the weather of a valid location (Cairo)" time="0.572" classname="Chrome 34.0.1847 (Mac OS X 10.9.2).WeatherClientSpec when getting the weather information"/>
+    <testcase name="should fail when getting the weather information of an invalid location" time="0.838" classname="Chrome 34.0.1847 (Mac OS X 10.9.2).WeatherClientSpec when getting the weather information"/>
+    <system-out><![CDATA[Chrome 34.0.1847 (Mac OS X 10.9.2) LOG: 'Registration succeeded'
+,Chrome 34.0.1847 (Mac OS X 10.9.2) LOG: '[Success] Registration duplicated failed!!!'
+,Chrome 34.0.1847 (Mac OS X 10.9.2) LOG: 'Getting the weather of a valid location (Cairo) succeeded'
+,Chrome 34.0.1847 (Mac OS X 10.9.2) LOG: '[Success] Getting the weather information of an invalid location failed'
+
 ]]></system-out>
     <system-err/>
   </testsuite>

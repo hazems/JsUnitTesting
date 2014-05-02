@@ -93,8 +93,8 @@ describe("RegistrationClientSpec", function() {
 	 	});	   
 	}); 
 	
-	describe("when user registration is done", function(done) {
-		it("should be able to register valid user correctly", function() {
+	describe("when user registration is done", function() {
+		it("should be able to register valid user correctly", function(done) {
 			userName = "hazems" + new Date().getTime() + "@apache.org";
 	 		
 			document.getElementById("username").value = userName;
