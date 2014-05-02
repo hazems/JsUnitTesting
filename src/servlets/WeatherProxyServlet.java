@@ -24,10 +24,12 @@ import com.sun.syndication.io.SyndFeedInput;
  *
  */
 public class WeatherProxyServlet extends HttpServlet {
-	private static final long serialVersionUID = 8732370454506907957L;
+	private static final long serialVersionUID = 8732370454506907957L;	
+	private static final String INVALID_LOCATION_EXCEPTION_CODE = "777";
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		
 		System.out.println("In WeatherProxyServlet ...");
 		
 		String WOEID = request.getParameter("w");
@@ -54,7 +56,7 @@ public class WeatherProxyServlet extends HttpServlet {
 	            String description = entry.getDescription().getValue();
 	            
 	            if (description.contains("Invalid")) {
-	            	throw new ServletException("Invalid location code");
+	            	throw new ServletException(INVALID_LOCATION_EXCEPTION_CODE); 
 	            }
 	    		
 	    		writer = response.getWriter();	            

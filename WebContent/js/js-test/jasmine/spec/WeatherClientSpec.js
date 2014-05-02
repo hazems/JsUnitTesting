@@ -37,14 +37,14 @@ describe("WeatherClientSpec", function() {
 		*/
 	   
 	   it("should be able to get the weather of a valid location (Cairo)", function(done) {	 		
-	 		var successCallBack = function(weatherClient) {
+	 		var successCallBack = function(response) {
 	 			console.log("Getting the weather of a valid location (Cairo) succeeded");
 	 			
-	 			expect(weatherClient.xmlhttp.responseText).not.toEqual("");
+	 			expect(response).not.toEqual("");
 	 			done();
 	 		};
 	 		
-	 		var failureCallBack = function() {
+	 		var failureCallBack = function(error) {
 	 			console.log("failed");
 	 			
 	 			expect("Operation").toBe("passing"); /* fail test */
@@ -61,14 +61,16 @@ describe("WeatherClientSpec", function() {
 		
 		it("should fail when getting the weather information of an invalid location", function(done) {	 		
 	 		var successCallBack = function() {
-	 			console.log("[Error] Getting the weather information of an invalid location succeeded");
+	 			console.log("Getting the weather information of an invalid location succeeded");
 	 			
 	 			expect("Operation").toBe("passing"); /* fail test */
 	 			done();	 			
 	 		};
 	 		
-	 		var failureCallBack = function() {
-	 			console.log("[Success] Getting the weather information of an invalid location failed");
+	 		var failureCallBack = function(error) {
+	 			console.log("Getting the weather information of an invalid location failed: " + error);
+	 			
+	 			expect(error).toEqual("777"); //Expect error code "777" for invalid location error
 	 			
 	 			done();
 	 		};

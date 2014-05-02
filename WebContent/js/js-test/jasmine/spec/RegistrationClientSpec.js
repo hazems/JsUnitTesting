@@ -123,14 +123,16 @@ describe("RegistrationClientSpec", function() {
 	 		document.getElementById("password2").value = "Admin@123";  	 		
 	 		
 	 		var successCallBack = function() {
-	 			console.log("[Error] Registration duplicated succeeded!!!");
+	 			console.log("Registration duplicated succeeded!!!");
 	 			
 	 			expect("Operation").toBe("passing"); /* fail test */
 	 			done(); 	 			
 	 		};
 	 		
-	 		var failureCallBack = function() {
-	 			console.log("[Success] Registration duplicated failed!!!");
+	 		var failureCallBack = function(error) {
+	 			console.log("Registration of duplicate user failed");
+	 			
+	 			expect(error).toEqual("776"); //Expect error code "776" for duplicate user exception.
 	 			
 	 			done();
 	 		};		

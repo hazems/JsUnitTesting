@@ -107,12 +107,12 @@ weatherapp.RegistrationClient.prototype.registrationReady =  function(successCal
 	}
 	
 	if (this.xmlhttp.status != 200)  {
-		failureCallBack(this);
+		failureCallBack(this.xmlhttp.responseText);
         return;
     }
     
 	if (this.xmlhttp.readyState == 4 && this.xmlhttp.status == 200) {
-		successCallBack(this);
+		successCallBack(this.xmlhttp.responseText);
     }
 };
 

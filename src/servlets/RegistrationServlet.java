@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  */
 public class RegistrationServlet extends HttpServlet {
-    
-	private static final long serialVersionUID = 8462431885847832248L;	 
+	private static final long serialVersionUID = 8462431885847832248L;	     
+	private static final String USER_ALREADY_EXCEPTION_CODE = "776";
 	public static final String USERS_MAP_APP_ATTR_NAME = "usersMap";	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -85,7 +85,6 @@ public class RegistrationServlet extends HttpServlet {
 	 * @param password
 	 */
 	public synchronized void registerUser(String userName, String password) throws ServletException, Exception {
-		
 		Map<String, String>usersMap = (Map<String, String>) getServletContext().getAttribute(USERS_MAP_APP_ATTR_NAME);
 		
 		if (usersMap == null) {
@@ -94,7 +93,7 @@ public class RegistrationServlet extends HttpServlet {
 		}
 		
 		if (usersMap.containsKey(userName)) {		
-			throw new ServletException("A user with the same username is already registered ...", null);
+			throw new ServletException(USER_ALREADY_EXCEPTION_CODE);
 		}
 		
 		usersMap.put(userName, password);

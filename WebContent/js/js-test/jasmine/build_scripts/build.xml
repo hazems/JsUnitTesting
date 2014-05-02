@@ -1,0 +1,9 @@
+<project name="demo" default="runJasmineTests" basedir=".">
+	<target name="runJasmineTests">
+	  <exec executable="sh">
+	    <arg value="-c"/>
+	    <arg value="./executeTests.sh"/>
+	  </exec>
+     
+	</target>
+</project>
