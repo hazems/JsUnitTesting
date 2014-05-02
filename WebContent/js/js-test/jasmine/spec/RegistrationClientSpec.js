@@ -103,13 +103,17 @@ describe("RegistrationClientSpec", function() {
 	 		
 	 		var successCallBack = function() {
 	 			console.log("Registration succeeded");
+	 			
 	 			done();
 	 		}; 
 	 		
 	 		var failureCallBack = function() {
 	 			console.log("Registration failed");
-	 		}
-
+	 			
+	 			expect("Operation").toBe("passing"); /* fail test */
+	 			done(); 			
+	 		};
+	 		
 	 		registrationClient.registerUser(registrationForm, successCallBack, failureCallBack);	 		
 		});
 		
@@ -120,10 +124,14 @@ describe("RegistrationClientSpec", function() {
 	 		
 	 		var successCallBack = function() {
 	 			console.log("[Error] Registration duplicated succeeded!!!");
+	 			
+	 			expect("Operation").toBe("passing"); /* fail test */
+	 			done(); 	 			
 	 		};
 	 		
 	 		var failureCallBack = function() {
 	 			console.log("[Success] Registration duplicated failed!!!");
+	 			
 	 			done();
 	 		};		
 
