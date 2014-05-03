@@ -8,7 +8,7 @@ module.exports = function(config) {
     basePath: '',
 
 	proxies: {
-  		'/': 'http://localhost:8080/'
+  		'/demo': 'http://localhost:8081/demo'
 	},
 
     // frameworks to use
