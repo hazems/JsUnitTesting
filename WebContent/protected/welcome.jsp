@@ -18,8 +18,7 @@
 		var location = document.getElementById("w").value;	
 		
 		weatherClient.getWeatherCondition({
-										   'location': location,
-										   'resultDivID': 'weatherInformation'
+										   'location': location
 										  }, 
 										  weatherClient.displayWeatherInformation, 
 										  weatherClient.handleWeatherInfoError);		

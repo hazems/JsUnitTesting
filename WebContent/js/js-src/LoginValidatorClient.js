@@ -2,7 +2,7 @@ if (typeof weatherapp == "undefined" || !weatherapp) {
 	weatherapp = {};
 }
 
-weatherapp.LoginClient = function() {};
+weatherapp.LoginValidatorClient = function() {};
 
 /**
  * Public API
@@ -15,7 +15,7 @@ weatherapp.LoginClient = function() {};
    };
  * @returns {Boolean} which determines the operation result.
  */
-weatherapp.LoginClient.prototype.validateLoginForm =  function(loginForm) {
+weatherapp.LoginValidatorClient.prototype.validateLoginForm =  function(loginForm) {
 	
 	if (this.validateEmptyFields(loginForm) && 
 			this.validateUserName(loginForm) && 
@@ -27,7 +27,7 @@ weatherapp.LoginClient.prototype.validateLoginForm =  function(loginForm) {
 	return false;
 };
 
-weatherapp.LoginClient.prototype.validateEmptyFields =  function(loginForm) {
+weatherapp.LoginValidatorClient.prototype.validateEmptyFields =  function(loginForm) {
 	var passwordMessageID = loginForm.passwordMessage;
 	var userNameMessageID = loginForm.userNameMessage;
 	
@@ -52,7 +52,7 @@ weatherapp.LoginClient.prototype.validateEmptyFields =  function(loginForm) {
 	return true;
 };
 
-weatherapp.LoginClient.prototype.validateUserName =  function(loginForm) {
+weatherapp.LoginValidatorClient.prototype.validateUserName =  function(loginForm) {
 
 	// The username must be an email ...
 	var userNameMessageID = loginForm.userNameMessage;
@@ -70,7 +70,7 @@ weatherapp.LoginClient.prototype.validateUserName =  function(loginForm) {
 	return true;    
 };
 
-weatherapp.LoginClient.prototype.validatePassword =  function(loginForm) {
+weatherapp.LoginValidatorClient.prototype.validatePassword =  function(loginForm) {
 	
 	// The password contains at least one digit, one capital and small character 
 	// and at least one special character, and 6 characters or more ...
@@ -84,7 +84,7 @@ weatherapp.LoginClient.prototype.validatePassword =  function(loginForm) {
 		document.getElementById(passwordMessageID).innerHTML = "(format is invalid)";
 		
 		return false;
-	}	
+	}
 	
 	return true;
 };

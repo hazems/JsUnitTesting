@@ -22,8 +22,8 @@ weatherapp.RegistrationClient.prototype.validateRegistrationForm =  function(reg
 	document.getElementById(userNameMessage).innerHTML = "";	
 	document.getElementById(passwordMessage1).innerHTML = "";	
 	
-	// create the loginClient object in order to validate fields ...
-	var loginClient = new weatherapp.LoginClient();
+	// create the loginValidatorClient object in order to validate fields ...
+	var loginValidatorClient = new weatherapp.LoginValidatorClient();
 	
 	var loginForm = {};
 	
@@ -33,7 +33,7 @@ weatherapp.RegistrationClient.prototype.validateRegistrationForm =  function(reg
 	loginForm.passwordMessage = passwordMessage1;		
 	
 	// validate empty username and password fields.
-	if (! loginClient.validateEmptyFields(loginForm)) {
+	if (! loginValidatorClient.validateEmptyFields(loginForm)) {
 		return false;
 	}	
 	
@@ -45,14 +45,14 @@ weatherapp.RegistrationClient.prototype.validateRegistrationForm =  function(reg
 	}
 	
 	// check if the username is correct ...	
-	if (! loginClient.validateUserName(loginForm) ) {
+	if (! loginValidatorClient.validateUserName(loginForm) ) {
 		document.getElementById(userNameMessage).innerHTML = "(format is invalid)";
 		
 		return false;
 	}
 	
 	// check if the password is correct ...
-	if (! loginClient.validatePassword(loginForm) ) {
+	if (! loginValidatorClient.validatePassword(loginForm) ) {
 		document.getElementById(passwordMessage1).innerHTML = "(format is invalid)";
 		
 		return false;
@@ -116,10 +116,10 @@ weatherapp.RegistrationClient.prototype.registrationReady =  function(successCal
     }
 };
 
-weatherapp.RegistrationClient.prototype.displaySuccessMessage =  function(registrationClient) {
+weatherapp.RegistrationClient.prototype.displaySuccessMessage =  function(result) {
 	alert("User registration went successfully ...");
 };
 
-weatherapp.RegistrationClient.prototype.handleRegistrationError =  function(registrationClient) {
-	alert(registrationClient.xmlhttp.responseText);
+weatherapp.RegistrationClient.prototype.handleRegistrationError =  function(error) {
+	alert(error);
 };

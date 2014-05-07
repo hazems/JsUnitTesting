@@ -6,7 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Registration Form</title>
 	
-	<script type="text/javascript" src="js/js-src/LoginClient.js"></script>	
+	<script type="text/javascript" src="js/js-src/LoginValidatorClient.js"></script>	
 	<script type="text/javascript" src="js/js-src/RegistrationClient.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="css/reset.css">

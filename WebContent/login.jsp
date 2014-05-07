@@ -5,14 +5,14 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Login to the Weather Application</title>
-	<script type="text/javascript" src="js/js-src/LoginClient.js"></script>
+	<script type="text/javascript" src="js/js-src/LoginValidatorClient.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/inputForms.css">		
 </head>
 <body>
 	<script type="text/javascript">
 		function validateLoginForm() {
-			var loginClient = new weatherapp.LoginClient();
+			var loginValidatorClient = new weatherapp.LoginValidatorClient();
 			
 			var loginForm = {
 				"userNameField" : "username",
@@ -21,7 +21,7 @@
 				"passwordMessage" : "passwordMessage"
 			};
 			
-			return loginClient.validateLoginForm(loginForm);
+			return loginValidatorClient.validateLoginForm(loginForm);
 		}
 		
 		window.onload = function() {

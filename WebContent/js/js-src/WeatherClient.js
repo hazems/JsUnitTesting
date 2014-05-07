@@ -4,15 +4,13 @@ if (typeof weatherapp == "undefined" || !weatherapp) {
 
 weatherapp.WeatherClient = function() {};
 weatherapp.WeatherClient.xmlhttp;
-weatherapp.WeatherClient.weatherForm;
 weatherapp.WeatherClient.endpointURL = "";
 
 /**
  * Public API
  * @param weatherForm is a JSON object that contains the weather form information. For example:
     weatherForm = {
-		'location': '1521894',
-		'resultDivID': 'weatherInformation'
+		'location': '1521894'
 	};
  * @param successCallBack represents the callback that will be called when the operation succeeds.
  * @param failureCallBack represents the callback that will be called when the operation fails.
@@ -33,8 +31,6 @@ weatherapp.WeatherClient.prototype.getWeatherCondition =  function(weatherForm, 
 	this.xmlhttp.onreadystatechange = function() {
 		weatherClientLocal.weatherInformationReady(successCallBackLocal, failureCallBackLocal);
 	};
-	
-	this.weatherForm = weatherForm;
 	
 	if (typeof this.endpointURL == "undefined") {
 		this.endpointURL = "";
@@ -63,15 +59,11 @@ weatherapp.WeatherClient.prototype.weatherInformationReady =  function(successCa
     }
 };
 
-weatherapp.WeatherClient.prototype.displayWeatherInformation =  function(weatherClient) {
-	var resultDivID = weatherClient.weatherForm.resultDivID;
-	
-	document.getElementById(resultDivID).innerHTML = weatherClient.xmlhttp.responseText;
+weatherapp.WeatherClient.prototype.displayWeatherInformation =  function(result) {
+	document.getElementById("weatherInformation").innerHTML = result;
 };
 
-weatherapp.WeatherClient.prototype.handleWeatherInfoError =  function(weatherClient) {
-	var resultDivID = weatherClient.weatherForm.resultDivID;
-	
-	alert ("Error: " + weatherClient.xmlhttp.responseText);	
-	document.getElementById(resultDivID).innerHTML = "Error: " + weatherClient.xmlhttp.responseText;	
+weatherapp.WeatherClient.prototype.handleWeatherInfoError =  function(error) {
+	alert ("Error: " + error);	
+	document.getElementById("weatherInformation").innerHTML = "Error: " + error;	
 };
