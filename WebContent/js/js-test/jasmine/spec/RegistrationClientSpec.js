@@ -14,7 +14,7 @@ describe("RegistrationClientSpec", function() {
    var userName; 
      
    beforeEach(function() {	   
-	   	//jasmine.getFixtures().fixturesPath = '/test/spec/javascripts/fixtures/'; /* for the JSTD running ... */	    
+	   	//jasmine.getFixtures().fixturesPath = '/test/spec/javascripts/fixtures/'; 
 	    //loadFixtures("registrationFixture.html"); 
 	   
 	   jasmine.getFixtures().set("<label for=\"username\">Username (Email)  <span id=\"usernameMessage\" class=\"error\"></span></label>" + 
@@ -93,8 +93,8 @@ describe("RegistrationClientSpec", function() {
 	 	});	   
 	}); 
 	
-	describe("when user registration is done", function() {
-		it("should be able to register valid user correctly", function(done) {
+	describe("when user registration is requested", function() {
+		it("should be able to register a valid user correctly", function(done) {
 			userName = "hazems" + new Date().getTime() + "@apache.org";
 	 		
 			document.getElementById("username").value = userName;
